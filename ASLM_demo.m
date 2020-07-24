@@ -72,3 +72,8 @@ kernelSize = 1;
     QKLMS(Input_train,Desire_train,Input_test,Desire_test,stepSize,VQradius,kernelSize);
 fprintf('KLMS: training MSE = %.4f, testing MSE = %.4f, training Time = %.4f, testing Time = %.4f; \n',...
     mse_QKLMS_tr, mse_QKLMS_te,time_KLMS_tr,time_KLMS_te) 
+    
+%================KLMS-ASM================
+[mse_ASM_te,time_ASM_tr,time_ASM_te] = KLMS_ASM(center,Input_test,Desire_test,y_KLMS_te,e_KLMS_tr);
+fprintf('KLMS-ASM: training MSE = %.4f, testing MSE = %.4f, training Time = %.4f, testing Time = %.4f; \n',...
+    0, mse_ASM_te,time_KLMS_tr+time_ASM_tr,time_KLMS_te+time_ASM_te) 
